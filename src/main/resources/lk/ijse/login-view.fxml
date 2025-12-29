@@ -33,17 +33,17 @@
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <TextField fx:id="txtUsername" layoutX="160.0" layoutY="350.0" prefHeight="26.0" prefWidth="320.0" promptText="john_doe" styleClass="btn-common">
+            <TextField fx:id="txtUsername" layoutX="160.0" layoutY="350.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="320.0" promptText="john_doe" styleClass="input-common">
                <font>
                   <Font size="18.0" />
                </font></TextField>
-            <PasswordField fx:id="txtPassword" layoutX="160.0" layoutY="445.0" prefHeight="26.0" prefWidth="320.0" promptText="********" styleClass="btn-common">
+            <PasswordField fx:id="txtPassword" layoutX="160.0" layoutY="445.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="320.0" promptText="********" styleClass="input-common">
                <font>
                   <Font size="18.0" />
                </font></PasswordField>
-            <Button fx:id="btnLogin" layoutX="161.0" layoutY="507.0" mnemonicParsing="false" onAction="#onLogin" prefHeight="26.0" prefWidth="320.0" styleClass="btn-common" text="Login">
+            <Button fx:id="btnLogin" layoutX="161.0" layoutY="507.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#onLogin" prefHeight="50.0" prefWidth="320.0" styleClass="btn-common" stylesheets="@styles.css" text="Login" textFill="WHITE">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="18.0" />
                </font></Button>
             <Label layoutX="275.0" layoutY="200.0" scaleX="2.0" scaleY="2.0" text="Login">
                <font>
