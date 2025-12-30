@@ -2,9 +2,9 @@ package lk.ijse.gear_rent_pro.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 
 public class AdminDashboardController {
     
@@ -22,7 +22,7 @@ public class AdminDashboardController {
         // Load side menu first and set parent controller
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/ijse/ui/side-menu/admin.fxml"));
-            Pane sideMenu = loader.load();
+            Parent sideMenu = loader.load();
             SideMenuAdminController sideMenuController = loader.getController();
             
             if (sideMenuController != null) {
@@ -46,7 +46,7 @@ public class AdminDashboardController {
     public void loadView(String fxmlFile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/lk/ijse/ui/" + fxmlFile));
-            Pane view = loader.load();
+            Parent view = loader.load();
             contentPane.getChildren().clear();
             contentPane.getChildren().add(view);
             
