@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-padding: 20; -fx-spacing: 15;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gear_rent_pro.controller.CustomerController" stylesheets="@../../styles/global.css">
+    
+    <Label text="Customer Management" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #214a26;" />
+    
+    <HBox spacing="10.0">
+        <Button text="Add" styleClass="btn-common" onAction="#showAddCustomerForm" />
+        <Button text="Edit" styleClass="btn-common" onAction="#editCustomer" />
+        <Button text="Delete" styleClass="btn-common" onAction="#deleteCustomer" />
+        <Button text="View History" styleClass="btn-common" onAction="#viewCustomerHistory" />
+        <Button text="Refresh" styleClass="btn-common" onAction="#refreshCustomerTable" />
+    </HBox>
+    <HBox spacing="10.0">
+        <Label text="Search:" />
+        <TextField fx:id="nameSearchField" promptText="Customer name..." />
+        <Label text="Membership:" />
+        <ComboBox fx:id="membershipFilterCombo" prefWidth="150.0" />
+        <Button text="Clear Filters" styleClass="btn-common" onAction="#clearFilters" />
+    </HBox>
+    
+    <TableView fx:id="customerTable" prefHeight="300.0" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="customerIdCol" prefWidth="80.0" text="Customer ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="customerId" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="nameCol" prefWidth="120.0" text="Name">
+                <cellValueFactory>
+                    <PropertyValueFactory property="name" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="nicCol" prefWidth="100.0" text="NIC/Passport">
+                <cellValueFactory>
+                    <PropertyValueFactory property="nicOrPassport" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="contactCol" prefWidth="100.0" text="Contact">
+                <cellValueFactory>
+                    <PropertyValueFactory property="contactNo" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="emailCol" prefWidth="120.0" text="Email">
+                <cellValueFactory>
+                    <PropertyValueFactory property="email" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="membershipCol" prefWidth="100.0" text="Membership">
+                <cellValueFactory>
+                    <PropertyValueFactory property="membership" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+    
+</VBox>

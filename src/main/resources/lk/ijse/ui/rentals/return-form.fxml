@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="700.0" style="-fx-padding: 20; -fx-spacing: 15;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gear_rent_pro.controller.ReturnFormController" stylesheets="@../../styles/global.css">
+    
+    <Label text="Process Return &amp; Settlement" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #214a26;" />
+    
+    <!-- Rental Details Section -->
+    <Label text="Rental Details" style="-fx-font-size: 14; -fx-font-weight: bold;" />
+    <GridPane hgap="10.0" vgap="10.0">
+        <columnConstraints>
+            <javafx.scene.layout.ColumnConstraints percentWidth="33.3" />
+            <javafx.scene.layout.ColumnConstraints percentWidth="33.3" />
+            <javafx.scene.layout.ColumnConstraints percentWidth="33.3" />
+        </columnConstraints>
+        
+        <Label text="Rental ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="rentalIdField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <Label text="Customer:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="customerField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+        <Label text="Equipment:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="equipmentField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        
+        <Label text="Start Date:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="startDateField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        
+        <Label text="End Date:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextField fx:id="endDateField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        
+        <Label text="Days Rented:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <TextField fx:id="daysRentedField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    </GridPane>
+    
+    <!-- Return Details Section -->
+    <Label text="Return Details" style="-fx-font-size: 14; -fx-font-weight: bold;" />
+    <GridPane hgap="10.0" vgap="10.0">
+        <columnConstraints>
+            <javafx.scene.layout.ColumnConstraints percentWidth="50.0" />
+            <javafx.scene.layout.ColumnConstraints percentWidth="50.0" />
+        </columnConstraints>
+        
+        <Label text="Actual Return Date:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <DatePicker fx:id="actualReturnDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <Label text="Days Late:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="daysLateField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+        <Label text="Equipment Damaged:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <CheckBox fx:id="damagedCheckBox" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        
+        <Label text="Damage Description:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextArea fx:id="damageDescriptionArea" prefRowCount="3" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        
+        <Label text="Damage Charge:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextField fx:id="damageChargeField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    </GridPane>
+    
+    <!-- Settlement Section -->
+    <Label text="Settlement Calculation" style="-fx-font-size: 14; -fx-font-weight: bold;" />
+    <GridPane hgap="10.0" vgap="10.0" style="-fx-border-color: #e0e0e0; -fx-padding: 10;">
+        <columnConstraints>
+            <javafx.scene.layout.ColumnConstraints percentWidth="50.0" />
+            <javafx.scene.layout.ColumnConstraints percentWidth="50.0" />
+        </columnConstraints>
+        
+        <Label text="Rental Amount:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="rentalAmountField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <Label text="Security Deposit:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="securityDepositField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+        <Label text="Late Fee:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="lateFeeField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        
+        <Label text="Total Charges:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="totalChargesField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        
+        <Label text="Amount to Pay/Refund:" style="-fx-font-weight: bold;" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextField fx:id="balanceField" editable="false" style="-fx-font-size: 14; -fx-text-fill: #d9534f;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+    </GridPane>
+    
+    <!-- Settlement Type Label -->
+    <HBox alignment="CENTER">
+        <Label fx:id="settlementTypeLabel" style="-fx-font-size: 12; -fx-font-weight: bold;" />
+    </HBox>
+
+    <!-- Settlement Breakdown Section -->
+    <Label text="Settlement Breakdown" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #214a26;" />
+    <ScrollPane fitToWidth="true" prefHeight="250.0" style="-fx-border-color: #ddd; -fx-border-radius: 5;">
+        <TextArea fx:id="breakdownArea" editable="false" wrapText="true" style="-fx-font-family: monospace; -fx-font-size: 11; -fx-padding: 10;" />
+    </ScrollPane>
+    
+    <!-- Action Buttons -->
+    <HBox spacing="10.0" alignment="CENTER">
+        <Button text="Process Return &amp; Settlement" styleClass="btn-common" onAction="#processReturnAndSettlement" />
+        <Button text="Cancel" styleClass="btn-common" onAction="#cancelForm" />
+    </HBox>
+    
+</VBox>

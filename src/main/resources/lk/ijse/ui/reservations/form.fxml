@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-padding: 20; -fx-spacing: 15;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gear_rent_pro.controller.ReservationFormController" stylesheets="@../../styles/global.css">
+    
+    <Label text="Create New Reservation" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #214a26;" />
+    
+    <GridPane hgap="10.0" vgap="10.0">
+        <columnConstraints>
+            <javafx.scene.layout.ColumnConstraints percentWidth="50.0" />
+            <javafx.scene.layout.ColumnConstraints percentWidth="50.0" />
+        </columnConstraints>
+        
+        <!-- Reservation ID (read-only) -->
+        <Label text="Reservation ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="reservationIdField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        
+        <!-- Branch (read-only for non-admins) -->
+        <Label text="Branch:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <ComboBox fx:id="branchCombo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        
+        <!-- Customer Selection -->
+        <Label text="Customer:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <ComboBox fx:id="customerCombo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        
+        <!-- Start Date -->
+        <Label text="Start Date:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <DatePicker fx:id="startDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+        
+        <!-- End Date -->
+        <Label text="End Date:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <DatePicker fx:id="endDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+        <!-- Equipment Selection (moved below dates so branch+dates drive available list) -->
+        <Label text="Equipment:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <ComboBox fx:id="equipmentCombo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+    </GridPane>
+    
+    <!-- Action Buttons -->
+    <HBox spacing="10.0" alignment="CENTER">
+        <Button text="Create Reservation" styleClass="btn-common" onAction="#createReservation" />
+        <Button text="Cancel" styleClass="btn-common" onAction="#cancelForm" />
+    </HBox>
+    
+</VBox>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="600.0" style="-fx-padding: 20; -fx-spacing: 15;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gear_rent_pro.controller.OverdueController" stylesheets="@../../styles/global.css">
+    
+    <Label text="Overdue Rentals" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #d32f2f;" />
+    
+    <HBox spacing="10.0">
+        <Button text="Contact Customer" styleClass="btn-common" onAction="#contactCustomer" />
+        <Button text="Refresh" styleClass="btn-common" onAction="#refreshOverdueTable" />
+    </HBox>
+    
+    <TableView fx:id="overdueTable" prefHeight="300.0" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn prefWidth="80.0" text="Rental ID">
+                <cellValueFactory>
+                    <PropertyValueFactory property="rentalId" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="100.0" text="Customer">
+                <cellValueFactory>
+                    <PropertyValueFactory property="customerName" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="100.0" text="Equipment">
+                <cellValueFactory>
+                    <PropertyValueFactory property="equipmentDescription" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="80.0" text="Due Date">
+                <cellValueFactory>
+                    <PropertyValueFactory property="endDate" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="100.0" text="Days Overdue">
+                <cellValueFactory>
+                    <PropertyValueFactory property="daysOverdue" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="100.0" text="Contact">
+                <cellValueFactory>
+                    <PropertyValueFactory property="customerContact" />
+                </cellValueFactory>
+            </TableColumn>
+            
+        </columns>
+    </TableView>
+    
+</VBox>

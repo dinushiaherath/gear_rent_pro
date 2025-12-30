@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefWidth="220.0" spacing="12" style="-fx-background-color: #214a26; -fx-padding: 20;" stylesheets="@../../styles/global.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gear_rent_pro.controller.SideMenuManagerController">
+    <Label text="BRANCH MGR" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="20.0" />
+        </font>
+    </Label>
+    
+    <Separator style="-fx-padding: 5 0 5 0;" />
+    
+    <Label style="-fx-padding: 10 0 5 0;" text="Operations" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Button fx:id="btnEquipment" onAction="#loadEquipment" prefWidth="200.0" styleClass="side-button" text="📦 Equipments" />
+    <Button fx:id="btnCustomers" onAction="#loadCustomers" prefWidth="200.0" styleClass="side-button" text="👥 Customers" />
+    <Button fx:id="btnReservations" onAction="#loadReservations" prefWidth="200.0" styleClass="side-button" text="📋 Reservations" />
+    <Button fx:id="btnRentals" onAction="#loadRentals" prefWidth="200.0" styleClass="side-button" text="🛒 Rentals" />
+    
+    <Label style="-fx-padding: 10 0 5 0;" text="Settlements" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Button fx:id="btnOverdue" onAction="#loadOverdue" prefWidth="200.0" styleClass="side-button" text="⏰ Overdue Rentals" />
+    
+    <Label style="-fx-padding: 10 0 5 0;" text="Reports &amp; Analytics" textFill="WHITE">
+        <font>
+            <Font name="System Bold" size="12.0" />
+        </font>
+    </Label>
+    <Button fx:id="btnBranchRevenue" onAction="#loadBranchRevenue" prefWidth="200.0" styleClass="side-button" text="📈 Report: Branch Revenue" />
+    <Button fx:id="btnEquipmentUtil" onAction="#loadEquipmentUtilization" prefWidth="200.0" styleClass="side-button" text="📈 Report: Equipment Utilization" />
+    
+    <VBox VBox.vgrow="ALWAYS" />
+    
+    <Button fx:id="btnLogout" onAction="#logout" prefWidth="200.0" style="-fx-text-fill: white; -fx-font-size: 12px; -fx-padding: 8;" styleClass="btn-common" text="🚪 Logout" />
+</VBox>
