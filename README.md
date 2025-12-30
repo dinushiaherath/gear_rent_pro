@@ -326,6 +326,20 @@ gear_rent_pro/
 
 ---
 
+## Screenshots
+### Login Screen
+<img width="1273" height="708" alt="image" src="https://github.com/user-attachments/assets/263cd3b1-922e-4350-af2e-e696ef68021b" />
+
+### Admin Views
+<img width="1279" height="748" alt="image" src="https://github.com/user-attachments/assets/b12f6829-74fb-4632-80a8-b0109df54f8f" />
+
+### Manager Views
+<img width="1277" height="753" alt="image" src="https://github.com/user-attachments/assets/645f7daa-cfb6-4083-b947-4cd2bebb8ca6" />
+
+### Staff Views
+<img width="1274" height="749" alt="image" src="https://github.com/user-attachments/assets/fff89bbc-7455-42cf-b7b3-d9e3d439c22a" />
+
+
 ## License
 
 This project is developed for educational purposes.
