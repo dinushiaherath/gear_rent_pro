@@ -8,4 +8,6 @@ module lk.ijse {
 
     opens lk.ijse.gear_rent_pro.controller to javafx.fxml;
     exports lk.ijse.gear_rent_pro.controller;
+    
+    opens lk.ijse.gear_rent_pro.model to javafx.base, javafx.fxml;
 }
